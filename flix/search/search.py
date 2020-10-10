@@ -31,13 +31,13 @@ def search_for_director():
     items_id = 0
     if request.args.get('next_id') is not None:
         items_id = int(request.args.get('next_id'))
-    next_id = min(items_id + 12, len(directors))
-    prev_id = max(items_id - 12, 0)
+    next_id = min(items_id + 8, len(directors))
+    prev_id = max(items_id - 8, 0)
     next_items = False
     prev_items = False
-    if len(directors) - (items_id + 1) >= 12:
+    if len(directors) - (items_id + 1) >= 8:
         next_items = True
-    if items_id >= 12:
+    if items_id >= 8:
         prev_items = True
 
     return render_template(
@@ -83,13 +83,13 @@ def search_for_actor():
     items_id = 0
     if request.args.get('next_id') is not None:
         items_id = int(request.args.get('next_id'))
-    next_id = min(items_id + 10, len(actors))
-    prev_id = max(items_id - 10, 0)
+    next_id = min(items_id + 6, len(actors))
+    prev_id = max(items_id - 6, 0)
     next_items = False
     prev_items = False
-    if len(actors) - (items_id + 1) >= 12:
+    if len(actors) - (items_id + 1) >= 6:
         next_items = True
-    if items_id >= 10:
+    if items_id >= 6:
         prev_items = True
 
     return render_template(
@@ -116,13 +116,13 @@ def search_by_genre():
     items_id = 0
     if request.args.get('next_id') is not None:
         items_id = int(request.args.get('next_id'))
-    next_id = min(items_id + 12, len(genres))
-    prev_id = max(items_id - 12, 0)
+    next_id = min(items_id + 8, len(genres))
+    prev_id = max(items_id - 8, 0)
     next_items = False
     prev_items = False
-    if len(genres) - (items_id + 1) >= 12:
+    if len(genres) - (items_id + 1) >= 8:
         next_items = True
-    if items_id >= 12:
+    if items_id >= 8:
         prev_items = True
 
     return render_template(

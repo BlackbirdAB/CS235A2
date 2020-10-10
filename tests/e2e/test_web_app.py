@@ -106,7 +106,7 @@ def test_movies_by_director_with_director(client):
     assert b'Inception (2010)' in response.data
     assert b'A thief, who steals corporate secrets through use of dream-sharing technology, ' \
            b'is given the inverse task of planting an idea into the mind of a CEO.' in response.data
-    assert b'The Prestige (2006)' in response.data
+    assert b'The Dark Knight Rises (2012)' in response.data
 
 
 def test_movies_by_actor_without_actor(client):
@@ -128,7 +128,7 @@ def test_movies_by_actor_with_actor(client):
     assert b'Inception (2010)' in response.data
     assert b'A thief, who steals corporate secrets through use of dream-sharing technology, ' \
            b'is given the inverse task of planting an idea into the mind of a CEO.' in response.data
-    assert b'Shutter Island (2010)' in response.data
+    assert b'Blood Diamond (2006)' in response.data
 
 
 def test_movies_by_genre_without_genre(client):
@@ -150,7 +150,7 @@ def test_movies_by_genre_with_genre(client):
     assert b'13 Hours (2016)' in response.data
     assert b'During an attack on a U.S. compound in Libya, a security team struggles to make sense out of the chaos.' \
            in response.data
-    assert b'300 (2006)' in response.data
+    assert b'22 Jump Street (2014)' in response.data
 
 
 def test_login_required_to_review(client):
@@ -278,20 +278,10 @@ def test_search_for_actor_with_actor(client):
     assert b'Colleagues' in response.data
 
 
-def test_search_for_genre_without_genre(client):
+def test_search_for_genre(client):
     response = client.get('/search_for_genre')
     assert response.status_code == 200
 
     assert b'Search by Genre:' in response.data
     assert b'Action' in response.data
-    assert b'Music' in response.data
-
-
-def test_search_for_genre_with_genre(client):
-    response = client.get('/search_for_actor?actor=leo')
-    assert response.status_code == 200
-
-    assert b'Search Results For:' in response.data
-    assert b'Edoardo Leo' in response.data
-    assert b'Leonardo DiCaprio' in response.data
-    assert b'Colleagues' in response.data
+    assert b'Family' in response.data

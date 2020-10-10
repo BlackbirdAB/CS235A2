@@ -38,13 +38,13 @@ def movies_by_title():
     movies_id = 0
     if request.args.get('next_id') is not None:
         movies_id = int(request.args.get('next_id'))
-    next_id = min(movies_id + 6, len(movies))
-    prev_id = max(movies_id - 6, 0)
+    next_id = min(movies_id + 4, len(movies))
+    prev_id = max(movies_id - 4, 0)
     next_movies = False
     prev_movies = False
-    if len(movies) - (movies_id + 1) >= 6:
+    if len(movies) - (movies_id + 1) >= 4:
         next_movies = True
-    if movies_id >= 6:
+    if movies_id >= 4:
         prev_movies = True
 
     return render_template(
@@ -87,13 +87,13 @@ def movies_by_director():
     movies_id = 0
     if request.args.get('next_id') is not None:
         movies_id = int(request.args.get('next_id'))
-    next_id = min(movies_id + 6, len(movies))
-    prev_id = max(movies_id - 6, 0)
+    next_id = min(movies_id + 4, len(movies))
+    prev_id = max(movies_id - 4, 0)
     next_movies = False
     prev_movies = False
-    if len(movies) - (movies_id + 1) >= 6:
+    if len(movies) - (movies_id + 1) >= 4:
         next_movies = True
-    if movies_id >= 6:
+    if movies_id >= 4:
         prev_movies = True
 
     return render_template(
@@ -136,13 +136,13 @@ def movies_by_actor():
     movies_id = 0
     if request.args.get('next_id') is not None:
         movies_id = int(request.args.get('next_id'))
-    next_id = min(movies_id + 6, len(movies))
-    prev_id = max(movies_id - 6, 0)
+    next_id = min(movies_id + 4, len(movies))
+    prev_id = max(movies_id - 4, 0)
     next_movies = False
     prev_movies = False
-    if len(movies) - (movies_id + 1) >= 6:
+    if len(movies) - (movies_id + 1) >= 4:
         next_movies = True
-    if movies_id >= 6:
+    if movies_id >= 4:
         prev_movies = True
 
     return render_template(
@@ -176,13 +176,13 @@ def movies_by_genre():
     movies_id = 0
     if request.args.get('next_id') is not None:
         movies_id = int(request.args.get('next_id'))
-    next_id = min(movies_id + 6, len(movies))
-    prev_id = max(movies_id - 6, 0)
+    next_id = min(movies_id + 4, len(movies))
+    prev_id = max(movies_id - 4, 0)
     next_movies = False
     prev_movies = False
-    if len(movies) - (movies_id + 1) >= 6:
+    if len(movies) - (movies_id + 1) >= 4:
         next_movies = True
-    if movies_id >= 6:
+    if movies_id >= 4:
         prev_movies = True
 
     return render_template(
@@ -360,13 +360,13 @@ def reviews():
     reviews_id = 0
     if request.args.get('next_id') is not None:
         reviews_id = int(request.args.get('next_id'))
-    next_id = min(reviews_id + 5, len(review_list))
-    prev_id = max(reviews_id - 5, 0)
+    next_id = min(reviews_id + 3, len(review_list))
+    prev_id = max(reviews_id - 3, 0)
     next_reviews = False
     prev_reviews = False
-    if len(review_list) - (reviews_id + 1) >= 5:
+    if len(review_list) - (reviews_id + 1) >= 3:
         next_reviews = True
-    if reviews_id >= 5:
+    if reviews_id >= 3:
         prev_reviews = True
 
     target_movie = services.movie_to_dict(target_movie)
@@ -394,13 +394,13 @@ def watchlist():
         movies_id = 0
         if request.args.get('next_id') is not None:
             movies_id = int(request.args.get('next_id'))
-        next_id = min(movies_id + 6, user.watchlist.size())
-        prev_id = max(movies_id - 6, 0)
+        next_id = min(movies_id + 4, user.watchlist.size())
+        prev_id = max(movies_id - 4, 0)
         next_movies = False
         prev_movies = False
-        if user.watchlist.size() - (movies_id + 1) >= 6:
+        if user.watchlist.size() - (movies_id + 1) >= 4:
             next_movies = True
-        if movies_id >= 6:
+        if movies_id >= 4:
             prev_movies = True
 
         movies = []

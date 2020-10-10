@@ -15,7 +15,7 @@ utilities_blueprint = Blueprint(
     'utilities_bp', __name__)
 
 
-def get_selected_movies(quantity=6):
+def get_selected_movies(quantity=5):
     movies = services.get_random_movies(quantity, repo.repo_instance)
 
     return movies
