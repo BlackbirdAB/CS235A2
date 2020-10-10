@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <header>
+        <h1 class="title">Recommended Viewing</h1>
+    </header>
+    <br>
+    {% for movie in selected_movies %}
+        <br>
+        <article class="list-movie">
+            <a href="{{ movie.url }}">
+                <p id="list-title">{{ movie.title }} ({{ movie.release_year }})</p>
+                <p>{{ movie.description }}</p>
+            </a>
+        </article>
+    {% endfor %}
+</main>
+{% endblock %}

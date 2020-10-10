@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Land of 1000 Movies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/movies.css') }}"/>
+	<link rel="bookmark" type="image/x-icon" href="favicon.ico"/>
+    <link rel="icon" href="static/CSFlix-icon.png"/>
+  </head>
+
+  <link href='https://fonts.googleapis.com/css?family=Uncial Antiqua' rel='stylesheet'>
+
+  <body>
+    <div id="body">
+      <!-- Include navigation partial. -->
+      {% include 'navigation.html' %}
+
+      <div id="content-2">
+        <!-- Include header partial. -->
+        {% include 'header.html' %}
+        {% include 'search_navigation.html' %}
+
+        <div id="container">
+          <!-- Main content block to be supplied by page. -->
+          {% block content %} {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

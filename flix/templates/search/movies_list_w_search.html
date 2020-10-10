@@ -1,0 +1,29 @@
+{% extends 'movies/movie_list.html' %}
+{% block search_input %}
+<form action="{{ handler_url }}" method="post" id="search-form">
+    {{search_form.csrf_token}}
+    <div class ="form-field">
+        <table>
+            <tr>
+                <td id="search-label">
+                    {{search_form.search_term.label}}
+                </td>
+                <td id="search-input">
+                    {{search_form.search_term(size = 20, placeholder="", class="textarea", cols="50", rows="1", wrap="hard")}}
+                    {% if search_form.search_term.errors %}
+                        <ul class="errors">
+                        {% for error in search_form.search_term.errors %}
+                            <li>{{error}}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </td>
+                <td id="search-submit">
+                    {{ search_form.submit }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<br>
+{% endblock %}

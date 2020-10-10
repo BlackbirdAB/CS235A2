@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <header>
+        <h1 class="title">Reviews for {{ movie.title }} ({{ movie.release_year }})</h1>
+    </header>
+    <br>
+    <button id="review-button" class="btn-general" onclick="location.href='{{ movie.review_url }}'">Review This Movie</button>
+    <br>
+    <div id="reviews" style="clear:both">
+        <br>
+        {% for review in reviews %}
+            <article id="review-container">
+                <p class="review-segment" id="review-user"><em><b>{{ review.user }}</b></em></p>
+                <p class="review-segment" id="review-rating">Overall Rating: {{ review.rating }}/10</p>
+                <p class="review-segment" id="review-text">{{ review.review_text }}</p>
+                <p class="review-segment" id="review-timestamp">{{ review.timestamp }}</p>
+            </article>
+        <br><br>
+        {% endfor %}
+    </div>
+    {% if prev_reviews %}
+        <button id="prev-button" class="btn-general" onclick="location.href='{{ prev_reviews_url }}'">Prev</button>
+    {% endif %}
+    {% if next_reviews %}
+        <button id="next-button" class="btn-general" onclick="location.href='{{ next_reviews_url }}'">Next</button>
+    {% endif %}
+</main>
+{% endblock %}

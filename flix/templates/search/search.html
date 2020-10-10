@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    {% if search_form %}
+        <form action="{{ handler_url }}" method="post" id="search-form">
+            {{search_form.csrf_token}}
+            <div class ="form-field">
+                <table>
+                    <tr>
+                        <td id="search-label">
+                            {{search_form.search_term.label}}
+                        </td>
+                        <td id="search-input">
+                            {{search_form.search_term(size = 20, placeholder="", class="textarea", cols="50", rows="1", wrap="hard")}}
+                            {% if search_form.search_term.errors %}
+                                <ul class="errors">
+                                {% for error in search_form.search_term.errors %}
+                                    <li>{{error}}</li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </td>
+                        <td id="search-submit">
+                            {{ search_form.submit }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    <br>
+    {% endif %}
+    <header>
+        <h1 class="title">{{ title }}</h1>
+    </header>
+    <br>
+    {% for item in search_list %}
+        <br>
+        <table id="search-item">
+            <tr>
+                <td id="list-title">
+                    <a href='{{ item.movies_url }}'>
+                        <p>{{ item.name }}</p>
+                    </a>
+                </td>
+                <td>
+                    {% if item.colleagues_url %}
+                        <button id="colleagues-button" class="btn-general" onclick="location.href='{{ item.colleagues_url }}'">Colleagues</button>
+                {% endif %}
+                </td>
+            </tr>
+        </table>
+    {% endfor %}
+    <br>
+    {% if prev_items %}
+        <button id="prev-button" class="btn-general" onclick="location.href='{{ prev_items_url }}'">Prev</button>
+    {% endif %}
+    {% if next_items %}
+        <button id="next-button" class="btn-general" onclick="location.href='{{ next_items_url }}'">Next</button>
+    {% endif %}
+</main>
+{% endblock %}

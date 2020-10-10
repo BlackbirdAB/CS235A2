@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    <header>
+        <h1 class="title">{{ movie.title }} ({{ movie.release_year }})</h1>
+    </header>
+    <br><br>
+    {% if next_watchlist %}
+        <button id="next-watchlist" class="btn-general" onclick="location.href='{{ next_movie_url }}'">Next in Watchlist &#8658;</button>
+    {% endif %}
+    {% if prev_watchlist %}
+        <button id="prev-watchlist" class="btn-general" onclick="location.href='{{ prev_movie_url }}'">&#8656; Prev in Watchlist</button>
+    {% endif %}
+    <div id="movie_info">
+        <p class="info-line">{{ movie.description }}</p>
+        <br>
+        <p class="info-line">Directed by {{ movie.director }}</p>
+        <p class="info-line">Starring Actors:</p>
+        <ul>
+            {% for actor in movie.actors %}
+                <li id="actor">{{ actor }}</li>
+            {% endfor %}
+        </ul>
+        <p class="info-line">Genres: </p>
+        {% for genre in movie.genres %}
+            <p id="genre">{{ genre }}</p>
+        {% endfor %}
+        <br>
+        <p class="info-line">Runtime: {{ movie.runtime_minutes }} minutes</p>
+        <br><br>
+        <button id="watch-button" class="btn-general" onclick="location.href='{{ watch_now_url }}'">Watch Now</button>
+        {% if not in_watchlist %}
+            <button id="add-to-watchlist" class="btn-general" onclick="location.href='{{ add_to_watchlist_url }}'">Add to Watchlist</button>
+        {% else %}
+            <button id="add_to_watchlist" class="btn-general" onclick="location.href='{{ remove_from_watchlist_url }}'">Remove from Watchlist</button>
+        {% endif %}
+        <button id="review-button" class="btn-general" onclick="location.href='{{ movie.review_url }}'">Review This Movie</button>
+        <button id="reviews-button" class="btn-general" onclick="location.href='{{ reviews_url }}'">Read Reviews</button>
+    </div>
+</main>
+{% endblock %}

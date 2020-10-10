@@ -1,0 +1,20 @@
+<nav>
+    <div>
+        <table id="search-table">
+            <tr>
+                <td class="search-tab">
+                    <h3><a class="btn-search" href="{{ url_for('movies_bp.movies_by_title') }}">Search by Title</a></h3>
+                </td>
+                <td class="search-tab">
+                    <h3><a class="btn-search" href="{{ url_for('search_bp.search_for_director') }}">Search by Director</a></h3>
+                </td>
+                <td class="search-tab">
+                    <h3><a class="btn-search" href="{{ url_for('search_bp.search_for_actor') }}">Search by Actor</a></h3>
+                </td>
+                <td class="search-tab">
+                    <h3><a class="btn-search" href="{{ url_for('search_bp.search_by_genre') }}">Search by Genre</a></h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+</nav>

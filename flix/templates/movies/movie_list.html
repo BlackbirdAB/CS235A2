@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main id="main">
+    {% block search_input %}
+    {% endblock %}
+    <header>
+        <h1 class="title">{{ title }}</h1>
+    </header>
+    <br>
+    {% for movie in movies %}
+        <br>
+        <article class="list-movie">
+            <a href="{{ movie.url }}">
+                <p id="list-title">{{ movie.title }} ({{ movie.release_year }})</p>
+                <p>{{ movie.description }}</p>
+            </a>
+        </article>
+    {% endfor %}
+    <br>
+    {% if prev_movies %}
+        <button id="prev-button" class="btn-general" onclick="location.href='{{ prev_movies_url }}'">Prev</button>
+    {% endif %}
+    {% if next_movies %}
+        <button id="next-button" class="btn-general" onclick="location.href='{{ next_movies_url }}'">Next</button>
+    {% endif %}
+</main>
+{% endblock %}

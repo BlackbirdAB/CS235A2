@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: rgb(128, 128, 128);
+}
+
+#body {
+    min-height: 100%;
+    font-size: medium;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,0,0,1) 69%, rgba(128,0,0,1) 100%);
+}
+
+#content-2 {
+    background: rgb(0,0,0);
+    height: 100vh;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    padding-left: 3vw;
+    padding-top: 1.5vw;
+    padding-right: 3vw;
+    display: flex;
+    flex-direction: row;
+    border-top: rgb(160, 160, 160);
+    border-width: 2px;
+    border-style: solid;
+    min-height: 100%;
+    min-width: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,0,0,1) 69%, rgba(128,0,0,1) 100%);
+}
+
+#main {
+    width: 100%;
+}
+
+#nav {
+    width: 200px;
+    height: 100%;
+    background: rgb(0,0,0);
+    border-style: ridge;
+    border-color: rgb(160, 160, 160);
+    border-width: 8px;
+    padding: 30px 0px;
+    position: fixed;
+}
+
+.btn-nav {
+    padding: 10px;
+    border-bottom: 1px solid rgb(48, 48, 48);
+    border-top: 1px solid rgb(48,48,48);
+    display: block;
+}
+
+.btn-nav:hover {
+    color: rgb(100,100,100);
+  }
+
+#nav-footer {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 0;
+    font-size: small;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#nav-header {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 12px;
+}
+
+#logo {
+    width: 100%;
+}
+
+#header {
+    padding: 20px;
+    font-family: 'Uncial Antiqua';
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: rgb(160, 160, 160);
+    border-width: 2px;
+    border-style: solid;
+    color: rgb(160,160,160);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,0,0,1) 69%, rgba(128,0,0,1) 100%);
+    text-shadow: -2px -2px 0 rgb(112, 96, 40), 2px -2px 0 rgb(112, 96, 40), -2px 2px 0 rgb(112, 96, 40), 2px 2px 0 rgb(112, 96, 40);
+}
+
+#search-table {
+    width: 100%;
+    text-align: center;
+    background: rgb(0, 0, 0);
+}
+
+.search-tab {
+    max-width: 20%;
+    padding: 5px;
+}
+
+.btn-search:hover {
+    color: rgb(100,100,100);
+}
+
+.title {
+    font-size: 3vw;
+}
+
+.label {
+    padding-right: 3vw;
+}
+
+.info-line, .review-segment {
+    padding: 10px;
+}
+
+#actor, #genre, #review-text, #review-rating {
+    padding-left: 40px;
+}
+
+.list-movie {
+    padding: 10px;
+    width: 75%;
+}
+
+#list-title {
+    font-size: 30px;
+}
+
+#reviews, #movie_info {
+    width: 75%;
+}
+
+.btn-general {
+    background-color: rgb(48,0,0);
+    color: rgb(200, 200, 200);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 2px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.btn-general:hover {
+    background-color: rgb(96,0,0);
+    color: black;
+    cursor: pointer;
+}
+
+#prev-button {
+    float: left;
+}
+
+#next-button, #next-watchlist, #prev-watchlist, #review-button, #reviews-button {
+    float: right;
+}
+
+input[type='text'],
+    select {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        box-sizing: border-box;
+    }
+
+input[type='password'],
+    select {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+input[type='submit'] {
+    width: 5.5vw;
+    background-color: rgb(48,0,0);
+    color: rgb(200, 200, 200);
+    padding: 5px;
+    margin: 8px 0;
+    border: rgb(0, 0, 0);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: rgb(96,0,0);
+    color: black;
+}
+
+input[type='search'] {
+    padding: 3px;
+}
+
+#rating-wrapper {
+    max-width: 400px;
+}
+
+#search-label {
+    width: 150px;
+}
+
+#search-input {
+    padding: 10px;
+}
+
+#search-form {
+    display: flex;
+    vertical-align: middle;
+}
+
+#list-title {
+    width: 100%;
+    padding-right: 2vw;
+}
+
+#colleagues-button {
+    padding: 7px;
+    background-color: rgb(85, 71, 22);
+    float: right;
+}
+
+#search-item {
+    vertical-align: middle;
+    width: 40%;
+}
+
+#review-timestamp {
+    font-size: small;
+    float: right;
+}
+
+#review-user {
+    font-size: large;
+}

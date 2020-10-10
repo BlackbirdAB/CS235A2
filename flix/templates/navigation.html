@@ -1,0 +1,20 @@
+<nav id="nav">
+    <img id="logo" src="{{ url_for('static', filename='CSFlix.png') }}" />
+
+    <h2 id="nav-header">
+    {% if 'username' in session %}
+        Hello, {{ session['username'] }}
+    {% endif %}
+    </h2>
+    <a class="btn-nav" href="{{ url_for('home_bp.home') }}">Home</a>
+    <a class="btn-nav" href="{{ url_for('authentication_bp.register') }}">Register</a>
+    <a class="btn-nav" href="{{ url_for('authentication_bp.login') }}">Login</a>
+    <a class="btn-nav" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+    {% if not watchlist_empty %}
+        <br><br><br>
+        <a class="btn-nav" href="{{ url_for('movies_bp.watchlist') }}">My Watchlist</a>
+    {% endif %}
+    <div id="nav-footer">
+        Michael McKenzie
+    </div>
+</nav>
