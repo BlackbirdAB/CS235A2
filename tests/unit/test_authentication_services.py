@@ -53,7 +53,7 @@ def repository():
 
 
 def test_user_to_dict(repository):
-    assert services.user_to_dict(repository.get_user("Myles Kennedy")) == {'username': "myles kennedy",
+    assert services.user_to_dict(repository.get_user("Myles Kennedy")) == {'username': "Myles Kennedy",
                                                                            'password': "123"}
 
 
@@ -66,7 +66,7 @@ def test_add_user(repository):
 
 
 def test_get_user(repository):
-    assert services.get_user("Myles Kennedy", repository) == {'password': '123', 'username': 'myles kennedy'}
+    assert services.get_user("Myles Kennedy", repository) == {'password': '123', 'username': 'Myles Kennedy'}
     with pytest.raises(services.UnknownUserException):
         services.get_user("Scott Phillips", repository)
 

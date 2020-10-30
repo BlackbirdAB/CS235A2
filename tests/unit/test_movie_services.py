@@ -51,7 +51,7 @@ def repository():
 def test_reviews_to_dict(repository):
     review_dicts = services.reviews_to_dict(repository.get_reviews(), repository)
     assert review_dicts[0]['movie_title'] == "Moana" and review_dicts[0]['movie_release_year'] == 2016 and \
-           review_dicts[0]['user'] == "myles kennedy" and review_dicts[0]['review_text'] == "very nice" and \
+           review_dicts[0]['user'] == "Myles Kennedy" and review_dicts[0]['review_text'] == "very nice" and \
            review_dicts[0]['rating'] == 9 and len(review_dicts) == 2
     review3 = Review(services.get_movie("Moana", 2016, repository), "Not my favourite.", 4)
     assert services.review_to_dict(review3, repository) is None

@@ -46,7 +46,7 @@ def test_login(client, auth):
     # Check that a session has been created for the logged-in user.
     with client:
         client.get('/')
-        assert session['username'] == 'myles kennedy'
+        assert session['username'] == 'Myles Kennedy'
 
 
 def test_logout(client, auth):

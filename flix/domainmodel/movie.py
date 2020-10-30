@@ -7,116 +7,116 @@ from flix.domainmodel.director import Director
 class Movie:
     def __init__(self, title, release_year):
         if title == "" or type(title) is not str:
-            self.__title = None
+            self._title = None
         else:
-            self.__title = title.strip()
+            self._title = title.strip()
         if type(release_year) is not int or release_year < 1900:
-            self.__release_year = None
+            self._release_year = None
         else:
-            self.__release_year = release_year
-        self.__description: str = None
-        self.__director: Director = None
-        self.__actors: List[Actor] = list()
-        self.__genres: List[Genre] = list()
-        self.__runtime_minutes: int = 0
+            self._release_year = release_year
+        self._description: str = None
+        self._director: Director = None
+        self._actors: List[Actor] = list()
+        self._genres: List[Genre] = list()
+        self._runtime_minutes: int = 0
 
     @property
     def title(self) -> str:
-        return self.__title
+        return self._title
 
     @property
     def release_year(self) -> int:
-        return self.__release_year
+        return self._release_year
 
     @property
     def description(self) -> str:
-        return self.__description
+        return self._description
 
     @property
     def director(self) -> Director:
-        return self.__director
+        return self._director
 
     @property
     def actors(self):
-        return self.__actors
+        return self._actors
 
     @property
     def genres(self):
-        return self.__genres
+        return self._genres
 
     @property
     def runtime_minutes(self) -> int:
-        return self.__runtime_minutes
+        return self._runtime_minutes
 
     @title.setter
     def title(self, title):
         if title != "" and type(title) is str:
-            self.__title = title.strip()
+            self._title = title.strip()
 
     @release_year.setter
     def release_year(self, year):
         if type(year) is int and year >= 1900:
-            self.__release_year = year
+            self._release_year = year
 
     @description.setter
     def description(self, desc):
         if desc != "" and type(desc) is str:
-            self.__description = desc.strip()
+            self._description = desc.strip()
 
     @director.setter
     def director(self, director):
         if type(director) is Director:
-            self.__director = director
+            self._director = director
 
     @actors.setter
     def actors(self, actors):
         if type(actors) is List[Actor]:
-            self.__actors = actors
+            self._actors = actors
 
     @genres.setter
     def genres(self, genres):
         if type(genres) is List[Genre]:
-            self.__genres = genres
+            self._genres = genres
 
     @runtime_minutes.setter
     def runtime_minutes(self, runtime):
         if type(runtime) is int:
             if runtime > 0:
-                self.__runtime_minutes = runtime
+                self._runtime_minutes = runtime
             else:
                 raise ValueError()
 
     def __repr__(self):
-        return f"<Movie {self.__title}, {self.__release_year}>"
+        return f"<Movie {self._title}, {self._release_year}>"
 
     def __eq__(self, other):
         if not isinstance(other, Movie):
             return False
         else:
-            return other.__title == self.__title and other.__release_year == self.__release_year
+            return other._title == self._title and other._release_year == self._release_year
 
     def __lt__(self, other):
-        if self.__title != other.__title:
-            return self.__title < other.__title
+        if self._title != other._title:
+            return self._title < other._title
         else:
-            return self.__release_year < other.__release_year
+            return self._release_year < other._release_year
 
     def __hash__(self):
-        hash_string = self.__title + str(self.__release_year)
+        hash_string = self._title + str(self._release_year)
         return hash(hash_string)
 
     def add_actor(self, actor):
         if type(actor) is Actor:
-            self.__actors.append(actor)
+            self._actors.append(actor)
 
     def remove_actor(self, actor):
-        if actor in self.__actors:
-            self.__actors.remove(actor)
+        if actor in self._actors:
+            self._actors.remove(actor)
 
     def add_genre(self, genre):
         if type(genre) is Genre:
-            self.__genres.append(genre)
+            self._genres.append(genre)
 
     def remove_genre(self, genre):
-        if genre in self.__genres:
-            self.__genres.remove(genre)
+        if genre in self._genres:
+            self._genres.remove(genre)

@@ -6,7 +6,7 @@ A Web application allowing users to browse through a data set of Movies. Users c
 Installation via requirements.txt
 
 ```shell
-$ cd COMPSCI-235
+$ cd CS235A2
 $ py -3 -m venv venv
 $ venv\Scripts\activate
 $ pip install -r requirements.txt
